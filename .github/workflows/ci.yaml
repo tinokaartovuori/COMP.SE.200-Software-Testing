@@ -1,0 +1,21 @@
+name: CI
+
+on:
+    pull_request:
+        branches: [main]
+    push:
+        branches: [main]
+
+jobs:
+    build-and-test:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v2
+
+            - name: Build Docker Image
+              run: npm run build
+
+            - name: Run Tests
+              run: npm run ci-start
