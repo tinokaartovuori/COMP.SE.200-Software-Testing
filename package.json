@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "scripts": {
         "build": "docker build -t compse200-testing .",
-        "start": "docker run -it --rm compse200-testing",
+        "start": "docker run -it --rm -v ${PWD}/tests/unit_tests:/usr/src/app/tests/unit_tests -p 3000:3000 compse200-testing",
         "test": "jest"
     },
     "author": "",
