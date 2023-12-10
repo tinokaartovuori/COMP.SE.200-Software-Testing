@@ -2,44 +2,33 @@
 
 ## Quick Setup Guide
 
-Follow these steps to get started with the project:
+This guide will help you get started with the project using Docker and a Git submodule. Here are the steps:
 
 1. **Clone the Repository:**
 
-   - Copy this repository to your local machine. You can do this by using the command:
+    - Clone this repository to your local machine with the following command:
 
-     ```bash
-     git clone git@github.com:tinokaartovuori/COMP.SE.200-Software-Testing.git
-     ```
+        ```bash
+        git clone git@github.com:tinokaartovuori/COMP.SE.200-Software-Testing.git
+        ```
 
-2. **Set Up Node Version Manager (NVM) or Node.js:**
+1. **Set Up Docker:**
 
-   - If you don't have Node Version Manager (NVM), install it on your machine. Instructions can be found [here](https://github.com/nvm-sh/nvm).
-   - Alternatively, if you prefer not to use NVM, ensure you have Node.js version 14 installed.
-   - If using NVM, switch to Node version 14 by running:
+    - Ensure Docker is installed on your machine. If not, install it from [Docker's official website](https://www.docker.com/get-started).
+    - Build the Docker container for the project. This will set up the environment with the correct version of Node.js and other dependencies.
 
-     ```bash
-     nvm use
-     ```
+        ```bash
+        npm run build
+        ```
 
-   - Make sure you're in the project directory when you run this command.
+        This needs to be run in the project root, not in Docker. Note that this command needs to be executed if new dependencies are installed.
 
-3. **Install Dependencies:**
+    - After building run the Docker container:
 
-   - Install all necessary packages by running:
+        ```bash
+        npm run start
+        ```
 
-     ```bash
-     npm install
-     ```
+        This will execute the tests automatically and shut down the container.
 
-   - This command should be run in the root directory of the project.
-
-4. **Run Tests:**
-
-   - You can now run the tests with the command:
-
-     ```bash
-     npm run test
-     ```
-
-   - This command will execute the test scripts defined in the project.
+Remember, using Docker ensures that your development environment matches that of the project, regardless of your local machine setup.
