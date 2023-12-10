@@ -1,6 +1,6 @@
 FROM node:14
 
-WORKDIR /usr/src/app
+WORKDIR /app
 
 RUN apt-get update && apt-get install -y git
 

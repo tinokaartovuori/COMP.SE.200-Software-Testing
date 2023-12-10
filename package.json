@@ -3,9 +3,9 @@
     "version": "1.0.0",
     "scripts": {
         "build": "docker build -t compse200-testing .",
-        "start": "docker run -it --rm -v ${PWD}/tests/unit_tests:/usr/src/app/tests/unit_tests -p 3000:3000 compse200-testing",
-        "ci-start": "docker run --rm -v ${PWD}/tests/unit_tests:/usr/src/app/tests/unit_tests -p 3000:3000 compse200-testing",
-        "test": "jest"
+        "start": "docker run -it --rm -v ${PWD}/tests/unit_tests:/app/tests/unit_tests -p 3000:3000 compse200-testing",
+        "ci-start": "docker run -v ${PWD}/coverage:/app/coverage compse200-testing",
+        "test": "jest --coverage"
     },
     "author": "",
     "license": "ISC",
