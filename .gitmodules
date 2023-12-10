@@ -1,0 +1,3 @@
+[submodule "course_code"]
+	path = course_code
+	url = https://github.com/otula/COMP.SE.200-2023-2024-1
