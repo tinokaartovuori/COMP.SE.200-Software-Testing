@@ -5,4 +5,6 @@ module.exports = {
     transform: {
         '^.+\\.[t|j]sx?$': 'babel-jest',
     },
+    collectCoverage: true,
+    coverageReporters: [['lcov', { projectRoot: '../' }], 'text-summary'],
 }

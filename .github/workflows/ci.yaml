@@ -19,3 +19,14 @@ jobs:
 
             - name: Run Tests
               run: npm run ci-start
+
+            - name: Coveralls
+              uses: coverallsapp/github-action@master
+              with:
+                  github-token: ${{ secrets.GITHUB_TOKEN }}
+                  path-to-lcov: ./coverage/lcov.info
+                  debug: true
+
+            - name: List coverage directory
+              run: |
+                  ls -la ./coverage
